@@ -211,25 +211,58 @@ function myFunction(x, y) {
   return n
   }
 
+
 // Write a function that takes a string as argument
 // As it is, the string has no meaning
 // Increment each letter to the next letter in the alphabet
 // Return the correct word
 
 
+function myFunction(str) {
+    const arr = [...str];
+    const correctedArray = arr.map(e => String.fromCharCode(e.charCodeAt()+1));
+    return correctedArray.join('');
+}
 
 
-
+//tas pats: 
+function myFunction(str) {
+    return [...str].reduce((p, v) => p + String.fromCharCode(v.charCodeAt(0) + 1), '')
+  }
 
 // Write a function that takes a number (a) as argument
 // Split a into its individual digits and return them in an array
 // Tipp: you might want to change the type of the number for the splitting
 
+function myFunction(a) {
+    return [...a+''].map(v => +v)
+  }
 
+//tas pats: 
 
+function myFunction( a ) {
+    const string = a + '';
+    const strings = string.split('');
+    return strings.map(digit => Number(digit))
+}
 
 
 
 // Write a function that takes two strings (a and b) as arguments
 // Beginning at the end of 'a', insert 'b' after every 3rd character of 'a'
 // Return the resulting string
+
+function myFunction(a, b) {
+    return a.split('').reverse().map((c, index) => {    return index % 3 == 2 ? b + c : c  }).reverse().join('')
+}
+
+//tas pats: 
+function myFunction(a, b) {
+    let result = [];
+    let rest = a;
+    while (rest.length) {
+        result.push(rest.slice(-3));
+        rest = rest.slice(0, -3);
+    }
+    return result.reverse().join(b);
+ }
