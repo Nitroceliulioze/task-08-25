@@ -211,6 +211,22 @@ function myFunction(x, y) {
   return n
   }
 
+  //sita su jai padarem:
+  function myFunction(a) {
+    const isPrime = (n) => {
+      const prime = 0;
+      for (let i = 2; i* i <= n; i ++){
+        if (n % i === 0) {
+          prime ++;
+        }
+      }
+      return prime > 0 ? false : true;
+    }
+    while(!isPrime(a)) a++;
+    return a;
+   }
+  
+
 
 // Write a function that takes a string as argument
 // As it is, the string has no meaning
@@ -266,3 +282,6 @@ function myFunction(a, b) {
     }
     return result.reverse().join(b);
  }
+
+
+
